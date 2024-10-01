@@ -1,0 +1,29 @@
+---
+import '../styles/index.css';
+interface Props {
+  title: string;
+  legalAge?: boolean;
+}
+
+const { title } = Astro.props;
+const { legalAge = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Soberana te refresca la casa" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/logoHead.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script src="/js/forge.min.js" is:inline />
+  </head>
+  <body>
+
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
